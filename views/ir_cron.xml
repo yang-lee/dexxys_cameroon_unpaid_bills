@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+
+    <data noupdate="1">
+        <record id="ir_cron_send_unpaid_invoice_via_email" model="ir.cron">
+            <field name="name">Dexxys Unpaid Bills Tracker</field>
+            <field eval="True" name="active"/>
+            <field name="user_id" ref="base.user_root"/>
+            <field name="interval_number">5</field>
+            <field name="interval_type">minutes</field>
+            <field name="numbercall">-1</field>
+            <field name="doall" eval="False"/>
+            <field name="model" eval="'account.account.template'"/>
+            <field name="function" eval="'send_unpaid_vendor_bills_via_email'"/>
+            <field name="args" eval="'()'"/>
+        </record>
+    </data>
+
+</openerp>
